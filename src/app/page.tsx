@@ -35,9 +35,7 @@ export default function Home() {
       {/* Heading Texts */}
       <Heading length={selected.length} deleteSelected={deleteSelected} />
 
-      {/* =================== */}
       {/* Grid */}
-      {/* =================== */}
       <div
         className={`max-w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:mx-4 mx-2 lg:mx-6 overflow-hidden`}
       >
@@ -72,6 +70,7 @@ export default function Home() {
               changeArray();
             }}
           >
+            {/* Grid Image Item */}
             <motion.div
               className={`w-full h-full rounded-sm flex items-center justify-center 
               ${
@@ -87,9 +86,13 @@ export default function Home() {
                 className="rounded-sm w-full"
               />
             </motion.div>
+
+            {/* Hover: Grayish Overlay */}
             {(currentHover === idx || selected.includes(item)) && (
               <div className="absolute top-0 bottom-0 left-0 right-0 bg-gray-400/50 rounded-sm"></div>
             )}
+
+            {/* Hover: Tick Mark */}
             {(currentHover === idx || selected.includes(item)) && (
               <div className="absolute top-1 bottom-0 left-0 right-1 flex justify-end items-start">
                 <div className="w-8 h-8">
@@ -100,9 +103,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-      {/* ------------------ */}
-      {/* Grid Ends */}
-      {/* ------------------ */}
     </div>
   );
 }
